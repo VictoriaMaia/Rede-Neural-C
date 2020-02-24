@@ -6,33 +6,30 @@
 using namespace cv;
 using namespace std;
 
-float conv2d_1_bias [4] = {-0.0043052305,0.0117032,0.005176178,0.005176178};
+#define QntFiltros 2
 
-Mat kernel_Sobel_X = (Mat_<int>(3,3) << -1, 0, 1, -2, 0, 2, -1, 0, 1);
-Mat kernel_Sobel_Y = (Mat_<int>(3,3) << -1, -2, -1, 0, 0, 0, 1, 2, 1);
+float bias [2] = {50,50};
 
+// SobelY,SobelX
+vector <Mat> kernels {(Mat_<int>(3,3) << -1, -2, -1, 0, 0, 0, 1, 2, 1),(Mat_<int>(3,3) << -1, 0, 1, -2, 0, 2, -1, 0, 1)};
+ 
 Mat camandaConvolucao(Mat image_in){
     vector <Mat> canais (3);
     vector <Mat> canaisResultado (3);
-    Mat image_out;
+    Mat image_out = image_in;
 
-    split(image_in, canais); //BGR
-
-    filter2D(canais[0], canaisResultado[0], -1, kernel_Sobel_Y);
-    filter2D(canais[1], canaisResultado[1], -1, kernel_Sobel_Y);
-    filter2D(canais[2], canaisResultado[2], -1, kernel_Sobel_Y);
     
-    merge(canaisResultado, image_out);
-    add(image_out, 50, image_out);
+    for (int i = 0 ; i < QntFiltros; i++){
+        split(image_out, canais); //BGR
 
-    split(image_out, canais); //BGR
+        filter2D(canais[0], canaisResultado[0], -1, kernels[i]);
+        filter2D(canais[1], canaisResultado[1], -1, kernels[i]);
+        filter2D(canais[2], canaisResultado[2], -1, kernels[i]);
 
-    filter2D(canais[0], canaisResultado[0], -1, kernel_Sobel_X);
-    filter2D(canais[1], canaisResultado[1], -1, kernel_Sobel_X);
-    filter2D(canais[2], canaisResultado[2], -1, kernel_Sobel_X);
+        merge(canaisResultado, image_out);
 
-    merge(canaisResultado, image_out);
-    add(image_out, 50, image_out);
+        add(image_out, bias[i], image_out);
+    }
 
     return image_out;
 }
