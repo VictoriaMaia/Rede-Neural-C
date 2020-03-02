@@ -1,0 +1,1 @@
+int tamMaxPool = 2;
