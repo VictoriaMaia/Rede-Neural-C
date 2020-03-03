@@ -1,8 +1,3 @@
-#ifndef DENSE
-#define DENSE
-
-#include <cmath>
-
 vector <string> camadasRede = {"relu", "relu", "softmax"};
 vector <int> qntNeuronioCamada = {6, 4, 3};
 
@@ -21,5 +16,3 @@ typedef struct Neuronio{
 #define qntTotalNeuronios 13
 
 neuronio vet_Neuronios [qntTotalNeuronios];
-
-#endif

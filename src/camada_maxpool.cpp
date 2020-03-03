@@ -1,4 +1,7 @@
-#include "camada_maxpool.h"
+#ifndef BIBLIOTECAS
+#define BIBLIOTECAS
+#include "iniciarBiblio.h"
+#endif
 #include "iniciarPool.h"
 
 Mat camadaMaxPool(Mat in){

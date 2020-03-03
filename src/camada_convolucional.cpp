@@ -1,4 +1,7 @@
-#include "camada_convolucional.h"
+#ifndef BIBLIOTECAS
+#define BIBLIOTECAS
+#include "iniciarBiblio.h"
+#endif
 #include "iniciarConv.h"
 
 Mat camadaConvolucao(Mat image_in){

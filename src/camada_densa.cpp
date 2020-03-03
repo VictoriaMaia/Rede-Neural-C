@@ -1,4 +1,7 @@
-#include "camada_densa.h"
+#ifndef BIBLIOTECAS
+#define BIBLIOTECAS
+#include "iniciarBiblio.h"
+#endif
 #include "iniciarDense.h"
 
 void iniar_pesos(){
