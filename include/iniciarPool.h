@@ -1,1 +1,1 @@
-int tamMaxPool = 2;
+#define tamMaxPool 2

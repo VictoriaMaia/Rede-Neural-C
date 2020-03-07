@@ -9,7 +9,6 @@
 
 int main( int argc, char** argv ){
     // Mat in = (Mat_<uchar>(2,2) << 1,2,3,4);
-    // iniar_pesos();
     // camadas_densas(in);
     
 

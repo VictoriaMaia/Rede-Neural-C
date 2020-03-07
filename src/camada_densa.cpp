@@ -2,42 +2,8 @@
 #define BIBLIOTECAS
 #include "iniciarBiblio.h"
 #endif
+
 #include "iniciarDense.h"
-
-void iniar_pesos(){
-    // c0 com 6 neuronios
-    vet_Neuronios[0].bias = 3;
-    vet_Neuronios[0].pesos = {1,1,2,3};
-    vet_Neuronios[1].bias = 3;
-    vet_Neuronios[1].pesos = {-1,-1.5,1,3};
-    vet_Neuronios[2].bias = 2;
-    vet_Neuronios[2].pesos = {0,0.05,5,5.1};
-    vet_Neuronios[3].bias = 1;
-    vet_Neuronios[3].pesos = {-3,-1.65,3,2};
-    vet_Neuronios[4].bias = 4;
-    vet_Neuronios[4].pesos = {1,2,1,1};
-    vet_Neuronios[5].bias = 2;
-    vet_Neuronios[5].pesos = {0,0.5,1,1.6};
-    
-    // c1 com 4 neuronios
-    vet_Neuronios[6].bias = 1;
-    vet_Neuronios[6].pesos = {0,0.5,0.6,-0.7,0.9,3};
-    vet_Neuronios[7].bias = 1;
-    vet_Neuronios[7].pesos = {1,1,-3,-2,1.1,1.5};
-    vet_Neuronios[8].bias = 2;
-    vet_Neuronios[8].pesos = {0.4,0.9,-1.2,-1.5,2,1};
-    vet_Neuronios[9].bias = 1;
-    vet_Neuronios[9].pesos = {1,2,1,-1,-2,3};
-
-    // c2 com 3 neuronios
-    vet_Neuronios[10].bias = 2.0;
-    vet_Neuronios[10].pesos = {0,0,0,0};
-    vet_Neuronios[11].bias = 1.0;
-    vet_Neuronios[11].pesos = {0,0,0,0};
-    vet_Neuronios[12].bias = 0.1;
-    vet_Neuronios[12].pesos = {0,0,0,0};
-
-}
 
 
 float somatorio_camada_0(vector <uchar> entrada, neuronio neuro){
