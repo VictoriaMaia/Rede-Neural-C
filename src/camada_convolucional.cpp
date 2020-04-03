@@ -11,6 +11,9 @@ Mat camadaConvolucao(Mat image_in, int ind_filtro){
     
     add(image_out, conv_bias[ind_filtro], image_out);
     
+    // cout << endl << endl << "########## CONV ###########" << endl << endl;
+    // cout << image_out << endl;
+
     // if (image_in.rows != LinhasImg || image_in.cols != ColunasImg){
     //     resize(image_in, image_out, Size(LinhasImg, ColunasImg));
     // }
